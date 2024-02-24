@@ -141,6 +141,5 @@ def get_routes_timetables(lines, bus_number):
     while(utils.lines_from_until(lines, "*RP", "#RP") != []):
         result.append(get_route_timetables(utils.lines_from_until(lines, "*RP", "#RP"), bus_number))
         lines = utils.delete_lines_until(lines, "#RP")
-    #Sort result lexicographically by ids of all stops
     return result
 
