@@ -80,7 +80,6 @@ def get_stops(lines):
             try:
                 lon = line[j]
             except:
-                print(line)
                 exit(1)
             stop = {
                 "name": name,

@@ -2,8 +2,7 @@ import parse_timetable_helpers
 import json
 import utils
 import time
-#Start measuring time
-start = time.time()
+
 print("Loading timetable...")
 with open("timetable.txt", "r", encoding="windows-1250") as file:
     lines = file.readlines()
@@ -30,4 +29,3 @@ for number in bus_numbers:
     with open("data/timetables/" + number + ".json", "w") as file:
         json.dump(routes, file)
     print("Finished parsing timetables for bus number: ", number)
-print("Finished parsing timetable, time elapsed: ", time.time() - start, " seconds.")

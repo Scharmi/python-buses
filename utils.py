@@ -12,7 +12,6 @@ def distance_in_kilometers(lat1, lon1, lat2, lon2):
 def get_buses_by_line(line, data):
     buses = []
     for bus in data:
-        print(bus['Lines'])
         if bus['Lines'] == line:
             buses.append(bus)
     return buses
@@ -23,9 +22,6 @@ def time_difference_in_hours(time1, time2):
     if(type(time2) == str):
         time2 = datetime.strptime(time2, '%Y-%m-%d %H:%M:%S')
     return (time2 - time1).seconds / 3600
-
-    
-    
 
 def average_time(time1, time2):
     from datetime import datetime
@@ -45,6 +41,7 @@ def lines_from_until(lines, start_subword, end_subword):
             end_index = i + 1
             break
     return lines[start_index:end_index]
+
 def delete_lines_until(lines, subword):
     start_index = next((i for i, line in enumerate(lines) if subword in line), None)
     if start_index is not None:
@@ -58,7 +55,6 @@ def any_line_contains(lines, subword):
     return False
 
 def add_time(time_1, tim_2):
-    #{hours: 12, minutes: 12}
     hours = time_1['hours'] + tim_2['hours']
     minutes = time_1['minutes'] + tim_2['minutes']
     if minutes >= 60:
@@ -71,7 +67,6 @@ def add_time(time_1, tim_2):
     return {'hours': hours, 'minutes': minutes}
 
 def subtract_time(time_1, time_2):
-    #{hours: 12, minutes: 12}
     hours = time_1['hours'] - time_2['hours']
     minutes = time_1['minutes'] - time_2['minutes']
     if minutes >= 60:
@@ -100,7 +95,6 @@ def time_from_minutes(minutes):
     return {'hours': hours, 'minutes': minutes}
 
 def convert_time(time):
-    #2024-02-20 22:06:38
     if(type(time) == str):
         hours = int(time[11:13])
         minutes = int(time[14:16])

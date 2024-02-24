@@ -17,7 +17,6 @@ sum_delays_for_stops = dict()
 sum_visitings_for_stops = dict()
 average_delays_for_stops = dict()
 for bus_number in bus_numbers:
-    print("\rDoing bus number", bus_number)
     all_real_routes = bus.get_all_bus_number_real_routes(stops, routes, data, bus_number)
     for route in all_real_routes:
         for real_route in route:

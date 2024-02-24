@@ -36,7 +36,7 @@ for vehicle_number in vehicle_numbers:
         else:
             squares_total_buses[(lat, lon)] = 1
 print("There are", exceeding_speed_vehicles, "vehicles that exceeded 50 km/h out of", total_vehicle_numbers, "vehicles.")
-#Divide the map into squares and show the number of exceeded speeds in each square
+
 squares = dict()
 for speed in speeds_over_50:
     lat = speed['Lat']
